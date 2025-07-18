@@ -1,0 +1,520 @@
+/* CSS Variables for easy theme management */
+:root {
+    --primary-bg: #FFFFFF;
+    --secondary-bg: #F0F4F8; /* A very light grey-blue, pairs well with green */
+    --accent-color: #66BB6A; /* A nice, soft green */
+    --accent-hover: #4CAF50; /* A slightly darker green for hover */
+    --text-color: #333333;
+    --heading-font: 'Arial', sans-serif;
+    --body-font: 'Georgia', serif;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* JS will enhance this, but it's a good fallback */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--primary-bg);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--primary-bg);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    text-decoration: none;
+    display: flex; /* Helps with vertical alignment */
+    align-items: center;
+}
+
+nav .logo img {
+    height: 50px; /* Controls the size of your logo */
+    width: 50px; /* Ensure the container is a square */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Prevents the image from stretching */
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+    color: var(--accent-color);
+}
+
+/* Style for the active navigation link, indicating the current section */
+nav .nav-links li a.active {
+    color: var(--accent-color);
+}
+
+/* Mobile Menu Button (Hamburger) */
+.mobile-menu-button {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the nav links panel */
+    padding: 10px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Animate hamburger to 'X' when the button has the .active class */
+.mobile-menu-button.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-button.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-button.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Main Content & Sections --- */
+main {
+    padding-top: 80px; /* Adjust based on header height */
+}
+
+section {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: var(--secondary-bg);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    min-height: 90vh;
+    background-color: var(--primary-bg);
+    padding: 0; /* Override default section padding */
+    overflow: hidden; /* Ensures clip-path doesn't cause weird overflows */
+}
+
+.hero-text {
+    /* Give the text container more space (e.g., ~60%) than the image container */
+    /* This prevents the heading from wrapping to a new line on medium-sized screens */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 5%; /* Apply padding here instead of the section */
+    text-align: left;
+    z-index: 2; /* Ensures text is on top */
+}
+
+.hero-text h1 {
+    /* The h1 is now a container, so we adjust line-height and margin */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-main-heading {
+    display: flex;
+    align-items: baseline; /* Aligns text of different sizes beautifully */
+    flex-wrap: wrap; /* Allows text to wrap on very small screens */
+    gap: 0.25em; /* Reduced space between "Hi, I'm" and your name */
+}
+
+.hero-intro,
+.hero-title {
+    font-size: 2.2rem; /* Increased size */
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.hero-name {
+    font-size: 4.5rem; /* Large font size for your name */
+    font-weight: 700; /* Bold */
+    color: var(--accent-color);
+}
+
+.hero-title {
+    display: block;
+    margin-top: 0.2rem; /* Reduced space above the title */
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    max-width: 600px; /* Improves readability */
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    flex: 1;
+    background-image: url('../images/logo-fornow.jpg');
+    background-size: cover;
+    background-position: center;
+    /* This creates the slanted cut. Adjust the first percentage (25%) to change the angle. */
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex; /* Enables flexbox */
+    flex-wrap: nowrap; /* Prevents skills from wrapping to the next line */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    justify-content: flex-start; /* Aligns items to the start */
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem 0; /* Adds some vertical breathing room */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Custom Scrollbar for Webkit browsers (Chrome, Safari) */
+.skills-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.skills-container::-webkit-scrollbar-track {
+    background: var(--secondary-bg);
+    border-radius: 10px;
+}
+
+.skills-container::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+
+.skill {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    flex-shrink: 0; /* Prevents skills from shrinking to fit */
+    /* Animation properties: initial state is hidden */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Class added by JS when the element is in view to trigger the animation */
+.skill.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--primary-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px; /* Set a fixed height to make cards smaller */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    display: block;
+}
+
+.project-card-content {
+    padding: 1rem;
+}
+
+.project-card-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.project-card-content p {
+    line-height: 1.5;
+}
+
+.tech-stack {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background-color: var(--secondary-bg);
+    color: var(--accent-hover);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.more-text {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.see-more-button {
+    margin-top: 2.5rem;
+}
+
+/* Experience Section */
+.experience-timeline {
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    position: relative;
+    padding: 1rem 0;
+}
+
+/* The vertical line for the timeline */
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.experience-item {
+    margin-bottom: 2rem;
+    padding-left: 50px; /* Space for the line and dot */
+    position: relative;
+}
+
+/* The dot on the timeline */
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: 11px; /* (20px - (18px / 2)) + 2px border */
+    top: 5px;
+    height: 14px;
+    width: 14px;
+    border: 2px solid var(--accent-color);
+    background-color: var(--primary-bg);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.experience-item h3 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.experience-type {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.experience-details {
+    font-style: italic;
+    margin: 0.25rem 0 0.5rem;
+}
+
+/* Testimonials Section */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.testimonial-card {
+    background-color: var(--primary-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--accent-color);
+}
+
+.testimonial-card cite {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Contact Section */
+#contact p {
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: var(--secondary-bg);
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    nav .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        height: 100vh;
+        width: 60%;
+        max-width: 300px;
+        background-color: var(--primary-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.4s ease-in-out;
+    }
+
+    nav .nav-links.open {
+        right: 0; /* Slide in */
+    }
+
+    nav .nav-links li a {
+        font-size: 1.2rem;
+    }
+
+    .mobile-menu-button {
+        display: block; /* Show the button on smaller screens */
+    }
+
+    .hero {
+        flex-direction: column-reverse; /* Stacks text below the image */
+        min-height: auto;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding: 4rem 5%; /* Re-apply full section padding */
+    }
+
+    .hero-main-heading {
+        justify-content: center; /* Center the name and intro on mobile */
+    }
+
+    .hero-name {
+        font-size: 3rem; /* Adjust name size for mobile */
+    }
+    .hero-intro, .hero-title {
+        font-size: 1.7rem; /* Adjust subtitle size for mobile */
+    }
+
+    .hero-image {
+        clip-path: none; /* Remove the slant on mobile */
+        min-height: 300px;
+    }
+
+    .experience-timeline::before {
+        left: 5px;
+    }
+    .experience-item {
+        padding-left: 35px;
+    }
+    .experience-item::before {
+        left: -2px;
+    }
+}

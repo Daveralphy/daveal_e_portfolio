@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daveal - Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Site Icon (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="../images/logo-fornow.jpg">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#home" class="logo"><img src="../images/logo-fornow.jpg" alt="Daveal Portfolio Logo"></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1>
+                    <div class="hero-main-heading">
+                        <span class="hero-intro">Hi, I'm</span>
+                        <span class="hero-name">Raphael Daveal,</span>
+                    </div>
+                    <span class="hero-title">a Full-Stack Engineer & UI Designer</span>
+                </h1>
+                <p>I design and develop mobile apps and websites from the ground up. From wireframes and user flows to full backend architecture and deployment, I handle it all. My work blends thoughtful UI/UX design with solid, scalable code—delivering products that not only look great but work flawlessly.
+                <br><br>If you need someone who can take an idea from sketch to screen, you're in the right place.</p>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! My name is Daveal. I'm a self-taught programmer with a passion for learning and exploring new technologies. 
+                I have experience in both front-end and back-end technologies, and I'm always eager to learn new things.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-container">
+                <!-- Add your skills here -->
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">Express</span>
+                <span class="skill">MongoDB</span>
+                <span class="skill">SQL</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <a href="project-1.html" class="project-card">
+                    <img src="https://placehold.co/600x400/66bb6a/ffffff?text=Project+One" alt="Project 1 Screenshot">
+                    <div class="project-card-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured e-commerce site built with the MERN stack, including payment gateway integration... <span class="more-text">more</span></p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Project 2 -->
+                <a href="project-2.html" class="project-card">
+                    <img src="https://placehold.co/600x400/4caf50/ffffff?text=Project+Two" alt="Project 2 Screenshot">
+                    <div class="project-card-content">
+                        <h3>Task Management App</h3>
+                        <p>A responsive task management application using React and Firebase for real-time data synchronization... <span class="more-text">more</span></p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Project 3 -->
+                <a href="project-3.html" class="project-card">
+                    <img src="https://placehold.co/600x400/388e3c/ffffff?text=Project+Three" alt="Project 3 Screenshot">
+                    <div class="project-card-content">
+                        <h3>Portfolio Website API</h3>
+                        <p>A custom RESTful API built with Node.js, Express, and PostgreSQL to power a dynamic portfolio... <span class="more-text">more</span></p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a href="projects.html" class="cta-button see-more-button">See More Projects</a>
+        </section>
+
+        <section id="experience">
+            <h2>My Experience</h2>
+            <div class="experience-timeline">
+                <!-- Experience 1 -->
+                <div class="experience-item">
+                    <h3>Full Stack Developer <span class="experience-type">Full-Time</span></h3>
+                    <p class="experience-details">Tech Company Inc. | Jan 2022 - Present</p>
+                    <p>Worked on developing and maintaining web applications using the MERN stack. Collaborated with a team to build new features and improve application performance.</p>
+                </div>
+                <!-- Experience 2 -->
+                <div class="experience-item">
+                    <h3>Junior Developer <span class="experience-type">Internship</span></h3>
+                    <p class="experience-details">Startup Co. | Jun 2021 - Dec 2021</p>
+                    <p>Assisted the development team in creating responsive front-end components and writing back-end API endpoints. Gained hands-on experience with Git and agile methodologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Daveal is a dedicated and talented developer. His ability to tackle complex problems and deliver high-quality code was a huge asset to our team. Highly recommended!"</p>
+                    <cite>&mdash; Jane Doe, Project Manager</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Working with Daveal was a pleasure. He is a great communicator and has a keen eye for detail, ensuring the final product was both functional and beautiful."</p>
+                    <cite>&mdash; John Smith, Lead Designer</cite>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>I'm currently open to new opportunities. Feel free to reach out!</p>
+            <a href="mailto:your.email@example.com" class="cta-button">Email Me</a>
+            <!-- Note: You will need to re-add the Font Awesome link if you want to keep these social icons -->
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-title">Daveal | Full Stack Developer</p>
+        <p>&copy; 2024 Daveal. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
