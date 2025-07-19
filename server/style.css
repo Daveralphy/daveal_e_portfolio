@@ -129,7 +129,7 @@ main {
 }
 
 section {
-    padding: 4rem 3%;
+    padding: 2rem 3%;
     text-align: center;
 }
 
@@ -231,27 +231,18 @@ section:nth-child(even) {
 }
 
 .skills-container {
-    display: flex; /* Enables flexbox */
-    flex-wrap: nowrap; /* Prevents skills from wrapping to the next line */
+    display: grid;
+    grid-auto-flow: column; /* Lays out items in columns instead of rows */
+    grid-template-rows: repeat(2, auto); /* Creates a two-row grid */
     overflow-x: auto; /* Enables horizontal scrolling */
-    justify-content: flex-start; /* Aligns items to the start */
-    gap: 1rem;
+    gap: 1.5rem; /* Space between cards */
     margin-top: 2rem;
     padding: 1rem 0; /* Adds some vertical breathing room */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
-
-/* Custom Scrollbar for Webkit browsers (Chrome, Safari) */
-.skills-container {
-    display: flex;
-    overflow-x: auto;
-    padding: 1rem 0; /* Add some vertical padding */
-    gap: 1.5rem; /* Space between cards */
     /* Hides the scrollbar for a cleaner look */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
-
 .skills-container::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
 }
@@ -370,6 +361,11 @@ section:nth-child(even) {
     font-weight: bold;
 }
 
+/* Class to hide extra projects initially */
+.project-card.hidden {
+    display: none;
+}
+
 .see-more-button {
     margin-top: 2.5rem;
 }
@@ -431,6 +427,16 @@ section:nth-child(even) {
 .experience-details {
     font-style: italic;
     margin: 0.25rem 0 0.5rem;
+}
+
+.experience-item ul {
+    list-style-position: inside;
+    padding-left: 5px; /* Small indent */
+    margin-top: 0.5rem;
+}
+
+.experience-item li {
+    margin-bottom: 0.25rem;
 }
 
 /* Testimonials Section */
@@ -527,7 +533,7 @@ footer {
 
     .hero-text {
         text-align: left;
-        padding: 2rem 3% 4rem; /* Add some top padding for spacing */
+        padding: 2rem 3% 2rem; /* Reduce bottom padding to match other sections */
     }
     
     .hero-text h1 {
@@ -582,5 +588,28 @@ footer {
     }
     .experience-item::before {
         left: -2px;
+    }
+
+    .projects-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding: 1rem 0;
+        /* Hide scrollbar for a cleaner look */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .projects-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .project-card {
+        flex: 0 0 280px; /* Set a fixed width for scrolling */
+        width: 280px;
+    }
+
+    .project-card img {
+        height: 180px; /* Reduce image height for smaller cards */
     }
 }

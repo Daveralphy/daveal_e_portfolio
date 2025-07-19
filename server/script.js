@@ -96,4 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
     skillCards.forEach(card => {
         skillsObserver.observe(card);
     });
+
+    // --- View More Projects Button ---
+    const viewMoreBtn = document.getElementById('view-more-projects-btn');
+    if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent the link from navigating
+            const hiddenProjects = document.querySelectorAll('.project-card.hidden');
+            hiddenProjects.forEach(project => {
+                project.classList.remove('hidden');
+            });
+            // Hide the button after it's clicked
+            viewMoreBtn.style.display = 'none';
+        });
+    }
 });
