@@ -77,29 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightNav();
 
     // --- Animate Skills on Scroll using Intersection Observer ---
-    const skillsContainer = document.querySelector('.skills-container');
-
-    const observerOptions = {
-        root: null, // observing relative to the viewport
-        rootMargin: '0px',
-        threshold: 0.2 // trigger when 20% of the container is visible
-    };
+    const skillCards = document.querySelectorAll('.skill-card');
 
     const skillsObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
+            // When a card comes into view, add the 'is-visible' class which triggers the CSS animation
             if (entry.isIntersecting) {
-                const skills = entry.target.querySelectorAll('.skill');
-                skills.forEach((skill, index) => {
-                    // Stagger the animation by adding a delay to each skill
-                    skill.style.transitionDelay = `${index * 100}ms`;
-                    skill.classList.add('visible');
-                });
-                observer.unobserve(entry.target); // Stop observing once the animation has run
+                entry.target.classList.add('is-visible');
+                // Stop observing the card so the animation only happens once
+                observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, {
+        threshold: 0.1 // Trigger when 10% of the card is visible
+    });
 
-    if (skillsContainer) {
-        skillsObserver.observe(skillsContainer);
-    }
+    // Attach the observer to each skill card
+    skillCards.forEach(card => {
+        skillsObserver.observe(card);
+    });
 });
