@@ -19,6 +19,7 @@
 html {
     /* JS will enhance this, but it's a good fallback */
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Height of the fixed header */
 }
 
 body {
@@ -36,14 +37,21 @@ h1, h2, h3 {
 
 /* Header and Navigation */
 header {
-    background-color: var(--primary-bg);
+    background-color: transparent;
     padding: 1rem 3%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: none;
+    border-bottom: 3px solid transparent;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, border-bottom-color 0.4s ease;
+}
+
+header.scrolled {
+    background-color: var(--primary-bg);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border-bottom: 3px solid var(--accent-color);
+    border-bottom-color: var(--accent-color);
 }
 
 nav {
@@ -73,7 +81,7 @@ nav .nav-links {
 
 nav .nav-links li a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--primary-bg); /* White for visibility on hero image */
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -82,8 +90,12 @@ nav .nav-links li a:hover {
     color: var(--accent-color);
 }
 
+header.scrolled nav .nav-links li a {
+    color: var(--text-color);
+}
+
 /* Style for the active navigation link, indicating the current section */
-nav .nav-links li a.active {
+header.scrolled nav .nav-links li a.active {
     color: var(--accent-color);
 }
 
@@ -104,10 +116,14 @@ nav .nav-links li a.active {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--text-color);
+    background-color: var(--primary-bg); /* White for visibility on hero image */
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
     border-radius: 2px;
+}
+
+header.scrolled .hamburger-line {
+    background-color: var(--text-color);
 }
 
 /* Animate hamburger to 'X' when the button has the .active class */
@@ -123,18 +139,64 @@ nav .nav-links li a.active {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* --- Main Content & Sections --- */
-main {
-    padding-top: 80px; /* Adjust based on header height */
-}
-
 section {
     padding: 2rem 3%;
     text-align: center;
+    position: relative; /* For the decorative line pseudo-element */
+}
+
+/* New Home Section (Full-screen image) */
+#home {
+    height: 100vh;
+    padding: 0;
+    position: relative; /* For positioning the overlay and content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format=fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Add a dark overlay to make the text more readable */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.home-content {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2;
+}
+
+.home-content h1 {
+    color: var(--primary-bg);
+    font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive font size */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 section:nth-child(even) {
     background-color: var(--secondary-bg);
+}
+
+/* Decorative Separator Line between sections */
+main > section:not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.15), transparent);
 }
 
 /* Hero Section */
@@ -183,6 +245,7 @@ section:nth-child(even) {
     font-size: 4.5rem; /* Large font size for your name */
     font-weight: 700; /* Bold */
     color: var(--accent-color);
+    white-space: nowrap; /* Ensures the name doesn't break across lines */
 }
 
 .hero-text p {
@@ -371,53 +434,43 @@ section:nth-child(even) {
 }
 
 /* Experience Section */
+/* This container scrolls horizontally on mobile */
 .experience-timeline {
-    margin-top: 2rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    /* Use padding to create space on the sides and bottom for the scrollbar */
+    padding: 1rem 3% 2rem 3%;
+    margin: 2rem -3% 0 -3%; /* Negative margin to make it bleed to the edges */
     text-align: left;
-    position: relative;
-    padding: 1rem 0;
+    /* Hide scrollbar for a cleaner look */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-
-/* The vertical line for the timeline */
-.experience-timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background-color: var(--accent-color);
-    border-radius: 3px;
+.experience-timeline::-webkit-scrollbar {
+    display: none;
 }
 
 .experience-item {
-    margin-bottom: 2rem;
-    padding-left: 50px; /* Space for the line and dot */
-    position: relative;
+    flex: 0 0 320px; /* Don't shrink, base width of 320px */
+    width: 320px;
+    background-color: var(--primary-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* The dot on the timeline */
-.experience-item::before {
-    content: '';
-    position: absolute;
-    left: 11px; /* (20px - (18px / 2)) + 2px border */
-    top: 5px;
-    height: 14px;
-    width: 14px;
-    border: 2px solid var(--accent-color);
-    background-color: var(--primary-bg);
-    border-radius: 50%;
-    z-index: 1;
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 .experience-item h3 {
     color: var(--text-color);
     font-size: 1.2rem;
 }
-
 .experience-type {
     color: var(--accent-color);
     font-size: 0.9rem;
@@ -450,10 +503,25 @@ section:nth-child(even) {
 
 .testimonial-card {
     background-color: var(--primary-bg);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--accent-color);
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 1rem;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.testimonial-content {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
 }
 
 .testimonial-card cite {
@@ -498,6 +566,32 @@ footer {
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
+    nav {
+        justify-content: space-between; /* Positions logo left, hamburger right */
+    }
+
+    nav .logo {
+        display: flex; /* Show the logo on mobile */
+    }
+
+    /* On mobile, the header is always solid, not transparent on scroll */
+    header {
+        background-color: var(--primary-bg);
+        border-bottom: 3px solid var(--accent-color);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Ensure hamburger icon is dark on the solid mobile header */
+    .hamburger-line {
+        background-color: var(--text-color);
+    }
+
+    #home {
+        height: 60vh; /* Shorter height, closer to half a screen */
+        background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format=fit=crop'); /* More landscape-friendly image */
+        background-size: cover; /* Fills the container, looks more polished */
+    }
+
     nav .nav-links {
         position: fixed;
         top: 0;
@@ -520,10 +614,16 @@ footer {
 
     nav .nav-links li a {
         font-size: 1.2rem;
+        color: var(--text-color); /* Ensure links are dark on the solid mobile menu */
     }
 
     .mobile-menu-button {
         display: block; /* Show the button on smaller screens */
+    }
+
+    /* Left-align text content within sections on mobile for better readability */
+    section {
+        text-align: left;
     }
 
     .hero {
@@ -543,28 +643,14 @@ footer {
 
     .hero-main-heading {
         justify-content: flex-start; /* Align to the left on mobile */
-        gap: 0; /* Remove space between lines for tighter stacking */
-    }
-
-    .skills-intro,
-    #contact p {
-        text-align: center;
-    }
-
-    footer {
-        text-align: left;
+        gap: 0.25em; /* Add a small gap for better readability */
     }
 
     .hero-name {
         font-size: 2.5rem; 
-        white-space: nowrap;
-        flex-basis: 100%; /* Forces the name to a new line */
     }
     .hero-intro, .hero-title {
         font-size: 1.2rem; 
-    }
-    .hero-title {
-        white-space: nowrap; /* Ensures the title stays on a single line */
     }
 
     .hero-image {
@@ -580,14 +666,11 @@ footer {
         margin: 0.5rem 0; /* Further reduce vertical margin */
     }
 
-    .experience-timeline::before {
-        left: 5px;
-    }
-    .experience-item {
-        padding-left: 35px;
-    }
-    .experience-item::before {
-        left: -2px;
+    .skill-card {
+        /* Left-align content within the card on mobile */
+        align-items: flex-start;
+        padding: 1.5rem;
+        text-align: left;
     }
 
     .projects-grid {
@@ -611,5 +694,40 @@ footer {
 
     .project-card img {
         height: 180px; /* Reduce image height for smaller cards */
+    }
+
+    .testimonials-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 1.5rem;
+        padding: 1rem 3% 2rem 3%; /* Add padding for scrollbar and spacing */
+        margin: 2rem -3% 0 -3%; /* Bleed to the edges */
+        /* Hide scrollbar for a cleaner look */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .testimonials-grid::-webkit-scrollbar {
+        display: none;
+    }
+    .testimonial-card {
+        flex: 0 0 300px; /* Set a fixed width for scrolling */
+        width: 300px;
+    }
+}
+
+/* --- Desktop-specific enhancements for Experience Section --- */
+@media (min-width: 769px) {
+    .experience-timeline {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        overflow-x: visible; /* Disable horizontal scroll */
+        padding: 1rem 0; /* Reset padding */
+        margin: 2rem 0 0 0; /* Reset margin */
+    }
+
+    .experience-item {
+        /* Let the grid control the width */
+        width: auto;
     }
 }

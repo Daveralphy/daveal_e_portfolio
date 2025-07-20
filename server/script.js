@@ -48,6 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Header Scroll Effect ---
+    const handleHeaderScroll = () => {
+        // Add .scrolled class to header when user scrolls more than 50px
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+
     // --- Highlight Active Navigation Link on Scroll ---
     const sections = document.querySelectorAll('main section[id]');
     const mainNavLinks = document.querySelectorAll('nav .nav-links a');
@@ -72,10 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    window.addEventListener('scroll', highlightNav);
-    // Initial call to set the correct link on page load (e.g., if refreshed on a section)
-    highlightNav();
+    // --- Combined scroll event handler for performance ---
+    const onScroll = () => {
+        handleHeaderScroll();
+        highlightNav();
+    };
 
+    window.addEventListener('scroll', onScroll);
+    // Initial call to set correct states on page load (e.g., if refreshed on a section)
+    onScroll();
     // --- Animate Skills on Scroll using Intersection Observer ---
     const skillCards = document.querySelectorAll('.skill-card');
 

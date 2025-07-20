@@ -14,9 +14,11 @@
             <a href="#home" class="logo"><img src="../images/logo-fornow.jpg" alt="Raphael Daveal Logo"></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false">
@@ -28,25 +30,31 @@
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-text">
-                <h1>
-                    <div class="hero-main-heading">
-                        <span class="hero-intro">Hi! I'm</span>
-                        <span class="hero-name">Raphael Daveal,</span>
-                        <span class="hero-title">a Full-Stack Developer & UI Designer</span>
-                    </div>
-                </h1>
-                <div class="hero-image-mobile"></div>
-                <p>I design and develop mobile apps and websites from the ground up. From wireframes and user flows to full backend architecture and deployment, I handle it all. My work blends thoughtful UI/UX design with solid, scalable code—delivering products that not only look great but work flawlessly.
-                <br><br>If you need someone who can take an idea from sketch to screen, you're in the right place.</p>
+        <section id="home">
+            <div class="home-content">
+                <h1>Welcome to my E-Portfolio</h1>
             </div>
-            <div class="hero-image"></div>
+        </section>
+        <section id="about">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>
+                        <div class="hero-main-heading">
+                            <span class="hero-intro">Hi! I'm</span>
+                            <span class="hero-name">Raphael Daveal,</span>
+                            <span class="hero-title">a Full-Stack Developer & UI Designer</span>
+                        </div>
+                    </h1>
+                    <div class="hero-image-mobile"></div>
+                    <p>I design and develop mobile apps and websites from the ground up. From wireframes and user flows to full backend architecture and deployment, I handle it all. My work blends thoughtful UI/UX design with solid, scalable code—delivering products that not only look great but work flawlessly.
+                    <br><br>If you need someone who can take an idea from sketch to screen, you're in the right place.</p>
+                </div>
+                <div class="hero-image"></div>
+            </div>
         </section>
 
 
         <section id="skills">
-            <h2>My Skills</h2>
             <p class="skills-intro">My proficiency in a range of modern technologies and software is essential for building robust, scalable, and responsive websites and mobile applications. This expertise ensures a seamless user experience across all devices, and my core competencies include:</p>
             <div class="skills-container">
                 <!-- Figma -->
@@ -113,7 +121,7 @@
         </section>
 
         <section id="projects">
-            <h2>My Projects</h2>
+            <p class="skills-intro">I love bringing ideas to life through code. Here are some of the projects I've worked on, showcasing my skills in both front-end and back-end development. Each one was a unique challenge that I enjoyed tackling.</p>
             <div class="projects-grid">
                 <!-- AI Chatbot Project -->
                 <a href="#" class="project-card">
@@ -197,44 +205,70 @@
         </section>
 
         <section id="experience">
-            <h2>My Experience</h2>
+            <p class="skills-intro">Throughout my career, I've had the opportunity to work in diverse roles that have shaped my skills as a developer. Here's a look at my professional journey and the key contributions I've made along the way.</p>
             <div class="experience-timeline">
                 <!-- Nexora Technologies -->
                 <div class="experience-item">
                     <h3>Lead Developer <span class="experience-type">Full-Time</span></h3>
                     <p class="experience-details">Nexora Technologies | March 2025 - Present</p>
-                    <p>Led the end-to-end development of NextPay, a cutting-edge fintech application. My responsibilities included system architecture, managing the development lifecycle, and implementing core features for secure transactions and user management.</p>
+                    <ul>
+                        <li>Led the architecture and development of full-stack web applications, ensuring scalability and performance.</li>
+                        <li>Mentored junior developers, conducted code reviews, and established best practices for the engineering team.</li>
+                        <li>Managed the end-to-end project lifecycle, from requirements gathering to deployment and maintenance.</li>
+                    </ul>
                 </div>
                 <!-- Pioneer AI Academy -->
                 <div class="experience-item">
-                    <h3>Machine Learning Interface Designer <span class="experience-type">Internship</span></h3>
-                    <p class="experience-details">Pioneer Artificial Intelligence Academy | Jan 2025 - Present · Remote</p>
+                    <h3>Machine Learning Engineer <span class="experience-type">Internship</span></h3>
+                    <p class="experience-details">PAI Academy | Jan 2025 - Present · Remote</p>
                     <ul>
-                        <li>Collaborated on projects integrating AI models into user-friendly interfaces, bridging UI/UX design with Python programming and machine learning.</li>
-                        <li>Developed expertise in machine learning algorithms and their impact on product design.</li>
-                        <li>Engaged in hands-on projects focusing on AI-driven applications.</li>
+                        <li>Designed and prototyped user interfaces for complex machine learning applications, focusing on usability and clarity.</li>
+                        <li>Translated data science requirements into intuitive user flows and interactive data visualizations.</li>
+                        <li>Collaborated with ML engineers to bridge the gap between model capabilities and user-facing features.</li>
+                    </ul>
+                </div>
+                <!-- SellPhone -->
+                <div class="experience-item">
+                    <h3>Data Scraping Specialist <span class="experience-type">Freelance</span></h3>
+                    <p class="experience-details">SellPhone | Nov 2024 - Jan 2025 · Remote</p>
+                    <ul>
+                        <li>Developed and deployed robust Python scripts to scrape targeted lead data from Instagram for the Latin American market.</li>
+                        <li>Utilized BeautifulSoup and Selenium to parse and collect information on smartphone buyers and sellers.</li>
+                        <li>Cleaned, structured, and delivered a high-quality lead database that directly supported sales and marketing efforts.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="testimonials">
-            <h2>Testimonials</h2>
+            <p class="skills-intro">I believe that strong collaboration leads to great results. Here’s what some of my colleagues and clients have to say about working with me.</p>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <p>"Daveal is a dedicated and talented developer. His ability to tackle complex problems and deliver high-quality code was a huge asset to our team. Highly recommended!"</p>
-                    <cite>&mdash; Jane Doe, Project Manager</cite>
+                    <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&auto=format=fit=crop&facepad=2&fit=facearea&h=200&w=200" alt="Photo of Dallan Quass" class="testimonial-avatar">
+                    <div class="testimonial-content">
+                        <p>"Daveal is a dedicated and talented developer. His ability to tackle complex problems and deliver high-quality code was a huge asset to our team. Highly recommended!"</p>
+                        <cite>&mdash; Dallan Quass, Project Manager at PAIA</cite>
+                    </div>
                 </div>
                 <div class="testimonial-card">
-                    <p>"Working with Daveal was a pleasure. He is a great communicator and has a keen eye for detail, ensuring the final product was both functional and beautiful."</p>
-                    <cite>&mdash; John Smith, Lead Designer</cite>
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&auto=format=fit=crop&facepad=2&fit=facearea&h=200&w=200" alt="Photo of Jane Doe" class="testimonial-avatar">
+                    <div class="testimonial-content">
+                        <p>"Working with Daveal was a pleasure. He has a keen eye for detail, ensuring the final product was both functional and beautiful. A true professional."</p>
+                        <cite>&mdash; Jane Doe, CEO of SellPhone</cite>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&auto=format=fit=crop&facepad=2&fit=facearea&h=200&w=200" alt="Photo of John Smith" class="testimonial-avatar">
+                    <div class="testimonial-content">
+                        <p>"Daveal's technical skill and creative vision are a rare combination. He delivered a product that exceeded our expectations on every level."</p>
+                        <cite>&mdash; John Smith, Lead Designer</cite>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>I'm currently open to new opportunities. Feel free to reach out!</p>
+            <p class="skills-intro">I'm currently open to new opportunities and would love to hear from you. Whether you have a question or just want to say hi, feel free to reach out!</p>
             <a href="mailto:your.email@example.com" class="cta-button">Email Me</a>
             <!-- Note: You will need to re-add the Font Awesome link if you want to keep these social icons -->
             <div class="social-links">
