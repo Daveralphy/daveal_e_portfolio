@@ -256,7 +256,7 @@ main > section:not(:last-of-type)::after {
 
 .hero-image {
     flex: 1;
-    background-image: url('../images/logo-fornow.jpg');
+    background-image: url('images/logo-fornow.jpg');
     background-size: cover;
     background-position: center;
     /* Create a more defined, yet soft, slanted edge. The angle is ~78deg. */
@@ -659,7 +659,7 @@ footer {
 
     .hero-image-mobile {
         display: block; 
-        background-image: url('../images/logo-fornow.jpg');
+        background-image: url('images/logo-fornow.jpg');
         background-size: cover;
         background-position: center;
         min-height: 300px;
