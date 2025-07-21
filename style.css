@@ -161,9 +161,6 @@ section {
     height: 100vh;
     padding: 0;
     position: relative; /* For positioning the overlay and content */
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format=fit=crop');
     background-size: cover;
@@ -183,14 +180,62 @@ section {
 }
 
 .home-content {
-    position: relative; /* Ensure content is above the overlay */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
+    width: 90%; /* Prevent content from touching screen edges */
 }
 
 .home-content h1 {
     color: var(--primary-bg);
     font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive font size */
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.home-social-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.home-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.home-social-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.home-social-link i {
+    font-size: 1.4rem;
+}
+
+.home-social-link.behance {
+    background-color: #1769ff;
+}
+
+.home-social-link.github {
+    background-color: #333;
+}
+
+.home-social-link.linkedin {
+    background-color: #0A66C2;
 }
 
 section:nth-child(even) {
@@ -283,7 +328,7 @@ main > section:not(:last-of-type)::after {
     background-position: center;
     /* Create a more defined, yet soft, slanted edge. The angle is ~78deg. */
     -webkit-mask-image: linear-gradient(78deg, transparent 12%, black 22%);
-    mask-image: linear-gradient(85deg, transparent 10%, rgb(254, 3, 3) 22%);
+    mask-image: linear-gradient(85deg, transparent 10%, black 22%);
 }
 
 .hero-image-mobile {
@@ -612,6 +657,20 @@ footer {
         height: 60vh; /* Shorter height, closer to half a screen */
         background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format=fit=crop'); /* More landscape-friendly image */
         background-size: cover; /* Fills the container, looks more polished */
+    }
+
+    .home-content {
+        /* Add horizontal padding on mobile to give text more space from the edges */
+        padding: 0 1rem;
+    }
+
+    .home-social-links {
+        gap: 0.75rem;
+    }
+
+    .home-social-link {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
     }
 
     nav .nav-links {
