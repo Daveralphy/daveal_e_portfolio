@@ -758,7 +758,7 @@ footer {
     }
 
     .hero-main-heading {
-        justify-content: flex-start; /* Align to the left on mobile */
+        justify-content: flex-start;
         gap: 0.25em; /* Add a small gap for better readability */
     }
 
