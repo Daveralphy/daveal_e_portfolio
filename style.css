@@ -32,7 +32,18 @@ body {
 h1, h2, h3 {
     font-family: var(--heading-font);
     color: var(--accent-color);
-    margin-bottom: 1rem;
+}
+
+/* Section Titles */
+section h2 {
+    color: var(--text-color);
+    font-weight: 700; /* Bold */
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem; /* Space between icon and text */
+    margin-bottom: 2rem;
 }
 
 /* Header and Navigation */
@@ -621,9 +632,27 @@ footer {
         display: block; /* Show the button on smaller screens */
     }
 
-    /* Left-align text content within sections on mobile for better readability */
     section {
+        /* Reduce vertical space between sections on mobile */
+        padding: 1.5rem 3%;
+    }
+
+    /* On mobile, only the about section is left-aligned */
+    #about {
         text-align: left;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem; /* Reduce space below titles on mobile */
+    }
+
+    #about h2 {
+        justify-content: flex-start;
+    }
+
+    .skills-intro {
+        margin-bottom: 1.5rem; /* Reduce space below intro paragraphs */
     }
 
     .hero {
@@ -639,6 +668,7 @@ footer {
     .hero-text h1 {
         /* Reduce space below heading on mobile */
         margin-bottom: 0.5rem;
+        order: 2; /* Move heading to be the second item */
     }
 
     .hero-main-heading {
@@ -663,14 +693,12 @@ footer {
         background-size: cover;
         background-position: center;
         min-height: 300px;
-        margin: 0.5rem 0; /* Further reduce vertical margin */
+        margin-bottom: 1.5rem; /* Add space below the image */
+        order: 1; /* Move image to be the first item */
     }
 
-    .skill-card {
-        /* Left-align content within the card on mobile */
-        align-items: flex-start;
-        padding: 1.5rem;
-        text-align: left;
+    .hero-text p {
+        order: 3; /* Ensure the paragraph is the third item */
     }
 
     .projects-grid {
