@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Use { once: true } to automatically remove the listener after it fires once.
         // 'pointerdown' is a modern event that covers touch, mouse, and pen clicks.
         container.addEventListener('pointerdown', stopAnimation, { once: true });
-        // 'wheel' event fires for mouse wheel or trackpad scrolling before the scroll happens.
-        container.addEventListener('wheel', stopAnimation, { once: true });
+        // 'scroll' event fires only when the element itself is scrolled horizontally.
+        container.addEventListener('scroll', stopAnimation, { once: true });
     });
 });
