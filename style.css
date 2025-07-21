@@ -648,7 +648,7 @@ footer {
     }
 
     #about h2 {
-        justify-content: flex-start;
+        display: none;
     }
 
     .skills-intro {
