@@ -197,6 +197,17 @@ section:nth-child(even) {
     background-color: var(--secondary-bg);
 }
 
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Animation for horizontal scroll hint */
+@keyframes gentle-scroll {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-40px); } /* A subtle scroll amount */
+}
+
 /* Decorative Separator Line between sections */
 main > section:not(:last-of-type)::after {
     content: '';
@@ -630,6 +641,22 @@ footer {
 
     .mobile-menu-button {
         display: block; /* Show the button on smaller screens */
+    }
+
+    /* Add scroll hint animation to horizontally scrollable sections on mobile */
+    .skills-container,
+    .projects-grid,
+    .experience-timeline,
+    .testimonials-grid {
+        animation: gentle-scroll 4s ease-in-out 1.5s infinite;
+    }
+
+    /* This class is added by JS to stop the animation on user interaction */
+    .skills-container.user-interacted,
+    .projects-grid.user-interacted,
+    .experience-timeline.user-interacted,
+    .testimonials-grid.user-interacted {
+        animation: none;
     }
 
     section {

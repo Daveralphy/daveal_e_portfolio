@@ -125,4 +125,19 @@ document.addEventListener('DOMContentLoaded', () => {
             viewMoreBtn.style.display = 'none';
         });
     }
+
+    // --- Horizontal Scroll Hint Animation Stopper ---
+    const scrollableContainers = document.querySelectorAll('.skills-container, .projects-grid, .experience-timeline, .testimonials-grid');
+
+    scrollableContainers.forEach(container => {
+        const stopAnimation = () => {
+            container.classList.add('user-interacted');
+        };
+
+        // Use { once: true } to automatically remove the listener after it fires once.
+        // 'pointerdown' is a modern event that covers touch, mouse, and pen clicks.
+        container.addEventListener('pointerdown', stopAnimation, { once: true });
+        // 'wheel' event fires for mouse wheel or trackpad scrolling before the scroll happens.
+        container.addEventListener('wheel', stopAnimation, { once: true });
+    });
 });
