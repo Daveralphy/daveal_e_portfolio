@@ -622,6 +622,36 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+/* --- Coming Soon Page --- */
+.coming-soon-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.coming-soon-content {
+    max-width: 600px;
+}
+
+.coming-soon-content .fa-tools {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.coming-soon-content h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.coming-soon-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
     nav {
@@ -765,11 +795,10 @@ footer {
     }
 
     .hero-image-mobile {
-        display: block; 
-        background-image: url('images/logo-fornow.jpg');
-        background-size: cover;
-        background-position: center;
-        min-height: 300px;
+        display: block;
+        width: 100%; /* Make image take full width of its container */
+        height: auto; /* Height will scale automatically to maintain aspect ratio */
+        border-radius: 8px; /* Optional: add some rounded corners */
         margin-bottom: 1.5rem; /* Add space below the image */
         order: 1; /* Move image to be the first item */
     }
