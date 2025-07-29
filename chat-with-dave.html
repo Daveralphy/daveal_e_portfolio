@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Chat with Dave AI - Raphael Daveal</title>
+    <link rel="stylesheet" href="style.css"> <!-- Main portfolio styles -->
+    <link rel="stylesheet" href="chat-with-dave.css"> <!-- Project-specific styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/jpeg" href="images/logo-fornow.jpg">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html#home" class="logo"><img src="images/logo-fornow.jpg" alt="Raphael Daveal Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Project Hero Section -->
+        <section id="about" class="project-page-hero"> <!-- Using #about to inherit hero styles -->
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>"ChatWithDave" AI Assistant</h1>
+                    <div class="hero-image-mobile project-hero-mobile-image"></div>
+                    <p>A personalized and secure AI assistant built with Python, Flask, and Gemini AI, demonstrating a full-cycle development process from design to production deployment.</p>
+                </div>
+                <div class="hero-image project-hero-image"></div> <!-- This will show on desktop -->
+            </div>
+        </section>
+
+        <!-- The Story Section -->
+        <section id="project-story">
+            <h2><i class="fas fa-book-open"></i> The Three-Month Journey</h2>
+            <p class="skills-intro">This project was a three-month marathon, taking an idea from a design concept to a fully deployed, production-ready application. It showcases my end-to-end skills in design, frontend and backend development, and cloud infrastructure management.</p>
+            
+            <!-- Development Timeline -->
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-step-icon"><i class="fab fa-figma"></i></div>
+                    <h3>Week 1: Design & Prototyping</h3>
+                    <p>The journey began in Figma, where I spent a week designing a clean, intuitive, and engaging user interface. I focused on creating seamless user flows for registration, login, and the core chat functionality to ensure a great user experience from the start.</p>
+                    <div class="image-row">
+                        <figure>
+                            <img src="\images\lowfidelitypaperwireframe.png" alt="Low-fidelity paper wireframe" class="process-step-image">
+                            <figcaption>Low-Fidelity Wireframe</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="\images\highfidelity.png" alt="High-fidelity design in Figma" class="process-step-image">
+                            <figcaption>High-Fidelity Design</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="\images\mockupdesign.png" alt="Final UI mockup in Figma" class="process-step-image">
+                            <figcaption>Final UI Mockup</figcaption>
+                        </figure>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Figma</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-icon"><i class="fas fa-code"></i></div>
+                    <h3>Weeks 2-4: Frontend Development</h3>
+                    <p>With the Figma designs as a blueprint, I spent three weeks building the client-side of the application. I translated the static designs into a fully responsive and interactive web interface using semantic HTML, modern CSS, and vanilla JavaScript to handle real-time UI updates.</p>
+                    <div class="image-row">
+                        <figure>
+                            <img src="\images\htmlpage.png" alt="VSCode showing HTML structure" class="process-step-image">
+                            <figcaption>HTML Structure</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="\images\cssfile.png" alt="VSCode showing CSS styling" class="process-step-image">
+                            <figcaption>CSS Styling</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="\images\javascript.png" alt="VSCode showing JavaScript code" class="process-step-image">
+                            <figcaption>JavaScript Interactivity</figcaption>
+                        </figure>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Month 2: Backend & AI Integration</h3>
+                    <p>The next month was dedicated to building the application's core logic. I developed a robust backend using Python and Flask, integrating the Gemini AI API for conversational intelligence. This phase included setting up the database, implementing user authentication, and creating the API endpoints to connect the frontend and backend.</p>
+                    <div class="image-row">
+                        <figure>
+                            <img src="\images\python.png" alt="VSCode showing Python backend code" class="process-step-image">
+                            <figcaption>Python Backend</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="\images\flask.png" alt="VSCode showing Flask framework code" class="process-step-image">
+                            <figcaption>Flask Framework</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="\images\gemini.png" alt="VSCode showing Gemini AI integration" class="process-step-image">
+                            <figcaption>Gemini AI Integration</figcaption>
+                        </figure>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Gemini AI</span>
+                        <span class="tech-tag">SQLAlchemy</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-icon"><i class="fas fa-vial"></i></div>
+                    <h3>Month 3: Testing, Iteration & Deployment</h3>
+                    <p>The final month was focused on refinement and deployment. I rigorously tested the application, fixing bugs and improving the user experience based on UX principles. This included perfecting the login, sign-up, and message history flows. Finally, I deployed the application to a production environment.</p>
+                     <div class="image-row">
+                        <figure>
+                            <img src="\images\logoutuser.png" alt="Screenshot of the user logout screen" class="process-step-image">
+                            <figcaption>User Logout View</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="\images\loginscreen.png" alt="Screenshot of the login screen" class="process-step-image">
+                            <figcaption>Login Screen</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="\images\loggedinuser.png" alt="Screenshot of an authenticated user's view" class="process-step-image">
+                            <figcaption>Authenticated User View</figcaption>
+                        </figure>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Render</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">Gunicorn</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section id="features">
+            <h2><i class="fas fa-star"></i> Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-comments"></i>
+                    <h4>Interactive Chat Interface</h4>
+                    <p>A clean, responsive, and modern web interface for conversing with the AI, designed for a great user experience on any device.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>Dual Authentication System</h4>
+                    <p>Supports both secure local accounts (email/password) and seamless sign-in with Google OAuth 2.0 for user convenience.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <h4>End-to-End Encrypted History</h4>
+                    <p>For password-based accounts, chat history is encrypted in the database using a key derived from the user's password, ensuring privacy.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-cog"></i>
+                    <h4>Profile & Password Management</h4>
+                    <p>Users can update their display name and manage their account security with a "forgot password" reset functionality.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fab fa-google"></i>
+                    <h4>Gemini AI Integration</h4>
+                    <p>Utilizes Google's powerful and efficient `gemini-1.5-flash-latest` model for natural and context-aware conversations.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-secret"></i>
+                    <h4>Guest Mode</h4>
+                    <p>Allows new users to try the chatbot with a message limit before registering, providing a frictionless trial experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section id="architecture">
+            <h2><i class="fas fa-sitemap"></i> Architecture & Tech Stack</h2>
+            <p class="skills-intro">The application is built on a modern, scalable stack and deployed on a PaaS for easy management. Initially deployed on AWS, the project was migrated to Render and Supabase to optimize for a personal portfolio use case, demonstrating adaptability across different cloud environments.</p>
+            <div class="tech-stack-container">
+                <div class="tech-category">
+                    <h4><i class="fas fa-server"></i> Backend</h4>
+                    <ul>
+                        <li><strong>Language:</strong> Python</li>
+                        <li><strong>Framework:</strong> Flask</li>
+                        <li><strong>AI Model:</strong> Gemini 1.5 Flash</li>
+                        <li><strong>Database:</strong> PostgreSQL (Supabase)</li>
+                        <li><strong>ORM:</strong> SQLAlchemy</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h4><i class="fas fa-desktop"></i> Frontend</h4>
+                    <ul>
+                        <li><strong>Markup:</strong> HTML5</li>
+                        <li><strong>Styling:</strong> CSS3</li>
+                        <li><strong>Interactivity:</strong> JavaScript</li>
+                        <li><strong>Design:</strong> Figma</li>
+                    </ul>
+                </div>
+                <div class="tech-category">
+                    <h4><i class="fas fa-cloud-upload-alt"></i> Deployment</h4>
+                    <ul>
+                        <li><strong>Platform:</strong> Render (PaaS)</li>
+                        <li><strong>WSGI Server:</strong> Gunicorn</li>
+                        <li><strong>Database Provider:</strong> Supabase</li>
+                        <li><strong>Version Control:</strong> Git & GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demo Section -->
+        <section id="project-demo">
+            <h2><i class="fas fa-rocket"></i> Live Demo</h2>
+            <p>The application is hosted on a free Render instance and may take 30-50 seconds to wake up if it has been inactive. Your patience is appreciated!</p>
+            <a href="https://dave-chatbot-1trn.onrender.com" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Launch Chat with Dave <i class="fas fa-external-link-alt"></i>
+            </a>
+        </section>
+
+        <section id="back-to-projects">
+            <a href="index.html#projects" class="cta-button back-to-portfolio">
+                <i class="fas fa-arrow-left"></i> Back to All Projects
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-title">Designed with ❤️ by Daveal</p>
+        <p>&copy; 2025 All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

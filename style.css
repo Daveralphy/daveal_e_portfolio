@@ -7,6 +7,7 @@
     --text-color: #333333;
     --heading-font: 'Arial', sans-serif;
     --body-font: 'Georgia', serif;
+    --header-height: 82px; /* 50px logo + 2rem padding */
 }
 
 /* Basic Reset */
@@ -19,7 +20,7 @@
 html {
     /* JS will enhance this, but it's a good fallback */
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Height of the fixed header */
+    scroll-padding-top: var(--header-height); /* Height of the fixed header */
 }
 
 body {
@@ -27,6 +28,10 @@ body {
     color: var(--text-color);
     background-color: var(--primary-bg);
     line-height: 1.6;
+}
+
+main {
+    padding-top: var(--header-height);
 }
 
 h1, h2, h3 {
@@ -48,21 +53,15 @@ section h2 {
 
 /* Header and Navigation */
 header {
-    background-color: transparent;
+    background-color: var(--primary-bg);
     padding: 1rem 3%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: none;
-    border-bottom: 3px solid transparent;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease, border-bottom-color 0.4s ease;
-}
-
-header.scrolled {
-    background-color: var(--primary-bg);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border-bottom-color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, border-bottom-color 0.4s ease;
 }
 
 nav {
@@ -92,7 +91,7 @@ nav .nav-links {
 
 nav .nav-links li a {
     text-decoration: none;
-    color: var(--primary-bg); /* White for visibility on hero image */
+    color: var(--text-color);
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -101,12 +100,8 @@ nav .nav-links li a:hover {
     color: var(--accent-color);
 }
 
-header.scrolled nav .nav-links li a {
-    color: var(--text-color);
-}
-
 /* Style for the active navigation link, indicating the current section */
-header.scrolled nav .nav-links li a.active {
+nav .nav-links li a.active {
     color: var(--accent-color);
 }
 
@@ -127,14 +122,10 @@ header.scrolled nav .nav-links li a.active {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--primary-bg); /* White for visibility on hero image */
+    background-color: var(--text-color);
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
     border-radius: 2px;
-}
-
-header.scrolled .hamburger-line {
-    background-color: var(--text-color);
 }
 
 /* Animate hamburger to 'X' when the button has the .active class */
