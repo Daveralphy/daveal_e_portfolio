@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: US Weather & Energy Analysis - Raphael Daveal</title>
+    <link rel="stylesheet" href="style.css"> <!-- Main portfolio styles -->
+    <link rel="stylesheet" href="data-analysis-project.css"> <!-- Project-specific styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/jpeg" href="images/logo-fornow.jpg">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html#home" class="logo"><img src="images/logo-fornow.jpg" alt="Raphael Daveal Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Open navigation menu" aria-
+expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Project Hero Section -->
+        <section id="about" class="project-page-hero"> <!-- Using #about to inherit hero styles -->
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>Automated Weather & Energy Analysis Pipeline</h1>
+                    <img src="images/Streamlit Dashboard.png" alt="Screenshot of the US Weather & Energy Analysis Dashboard" class="hero-image-mobile">
+                    <p>An interactive data application designed to improve energy demand forecasting. By combining weather data with consumption patterns, this solution helps utilities optimize power generation, reduce operational costs, and enhance grid stability, turning complex data into actionable business intelligence.</p>
+                </div>
+                <!-- The background-image is set inline here to be specific to this project page -->
+                <div class="hero-image" style="background-image: url('images/Streamlit Dashboard.png');"></div>
+            </div>
+        </section>
+
+        <!-- The Story Section -->
+        <section id="project-story">
+            <h2><i class="fas fa-cogs"></i> From Configuration to Insight: An Interactive Workflow</h2>
+            <p class="skills-intro">This project turns a complex data pipeline into a simple, three-step interactive process, all handled within the dashboard UI.</p>
+            
+            <!-- Development Timeline -->
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-step-icon"><i class="fas fa-edit"></i></div>
+                    <h3>1. Dynamic Configuration in the UI</h3>
+                    <p>Instead of command-line scripts, all controls are built into the interface. Users can find reliable weather stations for new cities, see real-time data validation warnings (e.g., for states with insufficient data), and save new configurations directly within the dashboard's YAML editor.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">YAML</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>2. One-Click Pipeline Execution</h3>
+                    <p>The 'Refresh All Data' button is the magic trigger. It executes a master script (`run.py`) that orchestrates the entire backend process: fetching raw data from NOAA and EIA APIs, and then processing, cleaning, and validating it for analysis.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">run.py</span>
+                        <span class="tech-tag">Data Fetching</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="process-step-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>3. Comprehensive Analysis Dashboard</h3>
+                    <p>Once the pipeline completes, the dashboard instantly updates with fresh insights across multiple views: a geographic map of hotspots, time-series comparisons, correlation plots, usage heatmaps, and a dedicated data quality report to ensure full confidence in the results.</p>
+                    <img src="images/Streamlit Dashboard.png" alt="Screenshot of the Streamlit dashboard" class="process-step-image">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Plotly</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features Section -->
+        <section id="features">
+            <h2><i class="fas fa-star"></i> Analysis Highlights</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Dynamic Geographic Hotspots</h4>
+                    <p>Instantly map new energy demand hotspots across all configured cities after a data refresh.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Time Series Analysis</h4>
+                    <p>Compare consumption trends across all locations and identify weekly patterns with weekend highlighting.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-link"></i>
+                    <h4>Correlation Analysis</h4>
+                    <p>Get the hard numbers. Quantify the strong link between temperature and energy use with regression analysis.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-th"></i>
+                    <h4>Usage Patterns Heatmap</h4>
+                    <p>Reveal crucial daily and weekly consumption patterns based on temperature ranges for any selected city.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Self-Contained Application</h4>
+                    <p>No command line needed. Configure, refresh, and analyze data entirely within the interactive UI.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Built-in Data Validation</h4>
+                    <p>A dedicated report and real-time warnings ensure that all analysis is based on clean, reliable, and sufficient data.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demo Section -->
+        <section id="project-demo">
+            <h2><i class="fas fa-code-branch"></i> View on GitHub</h2>
+            <p>The complete source code, Jupyter notebooks, and project documentation are available on GitHub. Feel free to explore the repository to see the analysis in detail.</p>
+            <a href="https://github.com/Daveralphy" target="_blank" rel="noopener noreferrer" class="cta-button">
+                View Project on GitHub <i class="fab fa-github"></i>
+            </a>
+        </section>
+
+        <!-- Video Presentation Section -->
+        <section id="project-video">
+            <h2><i class="fas fa-video"></i> Video Presentation</h2>
+            <p>A 3-minute video presentation covering the business problem, a technical walkthrough of the pipeline architecture, a live demo of the dashboard, and key insights learned from the project.</p>
+            <a href="https://youtu.be/aUgApbzkrUI" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Watch on YouTube <i class="fab fa-youtube"></i>
+            </a>
+        </section>
+
+        <!-- Peer Review Section -->
+        <section id="peer-review">
+            <h2><i class="fas fa-hands-helping"></i> Acknowledgements & Peer Review</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <p>This project was developed with invaluable support and feedback from my mentors and colleagues at the Pioneer Artificial Intelligence Academy. Their guidance was crucial in shaping the final product.</p>
+                    <ul>
+                        <li><strong>Institution:</strong> Pioneer Artificial Intelligence Academy</li>
+                        <li><strong>Mentor:</strong> Elder Quass</li>
+                        <li><strong>Team Lead:</strong> Promise</li>
+                    </ul>
+                    <p><strong>Key feedback</strong> focused on creating a production-ready, modular code structure and ensuring the user interface was intuitive and self-contained. In response, the architecture was refactored to separate data fetching, processing, and presentation logic, and the `run.py` script was implemented to bridge the UI and backend, fulfilling the goal of a fully interactive application.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="back-to-projects">
+            <a href="index.html#projects" class="cta-button back-to-portfolio">
+                <i class="fas fa-arrow-left"></i> Back to All Projects
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-title">Designed with ❤️ by Daveal</p>
+        <p>&copy; 2025 All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

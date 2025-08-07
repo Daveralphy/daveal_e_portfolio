@@ -752,6 +752,8 @@ footer {
     section h2 {
         font-size: 2rem;
         margin-bottom: 1.5rem; /* Reduce space below titles on mobile */
+        flex-direction: column; /* Stack icon on top of text */
+        gap: 0.5rem; /* Adjust gap for vertical layout */
     }
 
     #about h2 {
