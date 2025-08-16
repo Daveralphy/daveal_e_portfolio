@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: US Weather & Energy Analysis - Raphael Daveal</title>
     <link rel="stylesheet" href="style.css"> <!-- Main portfolio styles -->
-    <link rel="stylesheet" href="data-analysis-project.css"> <!-- Project-specific styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/jpeg" href="images/logo-fornow.jpg">
 </head>
@@ -13,15 +12,15 @@
 
     <header>
         <nav>
-            <a href="index.html#home" class="logo"><img src="images/logo-fornow.jpg" alt="Raphael Daveal Logo"></a>
+            <a href="index.html" class="logo"><img src="images/logo-fornow.jpg" alt="Raphael Daveal Logo"></a>
             <ul class="nav-links">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#experience">Experience</a></li>
-                <li><a href="index.html#testimonials">Testimonials</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home.html#about">About</a></li>
+                <li><a href="home.html#skills">Skills</a></li>
+                <li><a href="home.html#projects">Projects</a></li>
+                <li><a href="home.html#experience">Experience</a></li>
+                <li><a href="home.html#testimonials">Testimonials</a></li>
+                <li><a href="home.html#contact">Contact</a></li>
             </ul>
             <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Open navigation menu" aria-
 expanded="false">
@@ -53,6 +52,7 @@ expanded="false">
             
             <!-- Development Timeline -->
             <div class="process-timeline">
+                <!-- Step 1 -->
                 <div class="process-step">
                     <div class="process-step-icon"><i class="fas fa-edit"></i></div>
                     <h3>1. Dynamic Configuration in the UI</h3>
@@ -62,7 +62,22 @@ expanded="false">
                         <span class="tech-tag">YAML</span>
                         <span class="tech-tag">API</span>
                     </div>
+                    <div class="image-row">
+                        <figure>
+                            <img src="https://via.placeholder.com/400x300.png?text=UI+Configuration" alt="UI Configuration Screenshot">
+                            <figcaption>UI-Based Configuration</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://via.placeholder.com/400x300.png?text=Data+Validation" alt="Data Validation Warning Screenshot">
+                            <figcaption>Real-Time Validation</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://via.placeholder.com/400x300.png?text=YAML+Editor" alt="YAML Editor Screenshot">
+                            <figcaption>In-App YAML Editor</figcaption>
+                        </figure>
+                    </div>
                 </div>
+                <!-- Step 2 -->
                 <div class="process-step">
                     <div class="process-step-icon"><i class="fas fa-rocket"></i></div>
                     <h3>2. One-Click Pipeline Execution</h3>
@@ -72,16 +87,44 @@ expanded="false">
                         <span class="tech-tag">run.py</span>
                         <span class="tech-tag">Data Fetching</span>
                     </div>
+                    <div class="image-row">
+                        <figure>
+                            <img src="https://via.placeholder.com/400x300.png?text=Refresh+Button" alt="Refresh All Data Button Screenshot">
+                            <figcaption>One-Click Refresh</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://via.placeholder.com/400x300.png?text=Data+Fetching" alt="Data Fetching Process Diagram">
+                            <figcaption>API Data Fetching</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://via.placeholder.com/400x300.png?text=Data+Processing" alt="Data Processing Diagram">
+                            <figcaption>Automated Processing</figcaption>
+                        </figure>
+                    </div>
                 </div>
+                <!-- Step 3 -->
                 <div class="process-step">
                     <div class="process-step-icon"><i class="fas fa-chart-bar"></i></div>
                     <h3>3. Comprehensive Analysis Dashboard</h3>
                     <p>Once the pipeline completes, the dashboard instantly updates with fresh insights across multiple views: a geographic map of hotspots, time-series comparisons, correlation plots, usage heatmaps, and a dedicated data quality report to ensure full confidence in the results.</p>
-                    <img src="images/Streamlit Dashboard.png" alt="Screenshot of the Streamlit dashboard" class="process-step-image">
                     <div class="tech-stack">
                         <span class="tech-tag">Streamlit</span>
                         <span class="tech-tag">Plotly</span>
                         <span class="tech-tag">Pandas</span>
+                    </div>
+                    <div class="image-row">
+                        <figure>
+                            <img src="images/Streamlit Dashboard.png" alt="Screenshot of the Streamlit dashboard">
+                            <figcaption>Geographic Hotspots</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://via.placeholder.com/400x300.png?text=Time+Series+Chart" alt="Time Series Chart Screenshot">
+                            <figcaption>Time-Series Comparison</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://via.placeholder.com/400x300.png?text=Heatmap" alt="Usage Heatmap Screenshot">
+                            <figcaption>Usage Pattern Heatmap</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -159,7 +202,7 @@ expanded="false">
         </section>
         
         <section id="back-to-projects">
-            <a href="index.html#projects" class="cta-button back-to-portfolio">
+            <a href="home.html#projects" class="cta-button back-to-portfolio">
                 <i class="fas fa-arrow-left"></i> Back to All Projects
             </a>
         </section>

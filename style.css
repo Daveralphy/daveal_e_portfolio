@@ -17,6 +17,13 @@
     box-sizing: border-box;
 }
 
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes bottom space and makes it behave like a block */
+}
+
 html {
     /* JS will enhance this, but it's a good fallback */
     scroll-behavior: smooth;
@@ -219,6 +226,10 @@ section {
 
 .home-social-link.behance {
     background-color: #1769ff;
+}
+
+.home-social-link.dev-link {
+    background-color: #FF8C00; /* A vibrant, tech-like orange */
 }
 
 .home-social-link.github {
@@ -739,6 +750,11 @@ footer {
         animation: none;
     }
 
+    /* Responsive layout for project step image rows */
+    .image-row {
+        flex-direction: column; /* Stack images vertically on mobile */
+    }
+
     section {
         /* Reduce vertical space between sections on mobile */
         padding: 1.5rem 3%;
@@ -866,4 +882,217 @@ footer {
         /* Let the grid control the width */
         width: auto;
     }
+}
+
+    .chat-project-page .image-row figure {
+        width: 100%;
+        margin-right: 0;
+    }
+
+
+/* --- END: Chat With Dave Project Page Styles --- */
+
+/* --- START: Data Analysis Project Page Styles --- */
+
+/*
+  The following styles are specific to the 'Data Analysis' project page.
+  They are scoped under the .data-analysis-project-page class, which should be
+  added to the <body> tag of the corresponding HTML file.
+*/
+
+.data-analysis-project-page {
+    /* Data Analysis Project LIGHT Theme Variables */
+    --da-primary-bg: #f8f9fa;      /* A very light, clean grey background */
+    --da-card-bg: #ffffff;         /* White for cards and distinct sections */
+    --da-accent-color: #007bff;     /* A professional, standard blue */
+    --da-accent-hover: #0056b3;     /* A darker blue for hover states */
+    --da-text-color: #495057;       /* A soft, readable grey for text */
+    --da-heading-color: #212529;    /* A dark, strong grey for headings */
+    --da-border-color: #e9ecef;     /* A standard light grey for borders */
+    --da-shadow-color: rgba(0, 0, 0, 0.075); /* A subtle shadow */
+
+    /* Override portfolio's default body and background */
+    background-color: var(--da-primary-bg);
+    color: var(--da-text-color);
+}
+
+/* Add more breathing room between sections */
+.data-analysis-project-page main section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Override main section title colors */
+.data-analysis-project-page main section h2 {
+    color: var(--da-heading-color);
+    border-bottom: 1px solid var(--da-border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 3rem; /* More space below headings */
+}
+
+/* Override accent colors */
+.data-analysis-project-page .project-page-hero .hero-text h1,
+.data-analysis-project-page main section h2 i,
+.data-analysis-project-page .feature-item i,
+.data-analysis-project-page .process-step-icon {
+    color: var(--da-accent-color);
+}
+
+/* Card and container styling */
+.data-analysis-project-page .process-step,
+.data-analysis-project-page .feature-item,
+.data-analysis-project-page #project-demo,
+.data-analysis-project-page #project-video,
+.data-analysis-project-page #peer-review .feature-item,
+.data-analysis-project-page #back-to-projects {
+    background-color: var(--da-card-bg);
+    border: 1px solid var(--da-border-color);
+    box-shadow: 0 4px 12px var(--da-shadow-color);
+    border-radius: 8px; /* Add rounded corners */
+    padding: 2rem; /* Add internal padding to cards */
+}
+
+/* Specific card adjustments */
+.data-analysis-project-page .feature-item,
+.data-analysis-project-page #peer-review .feature-item {
+    border-left: 4px solid var(--da-accent-color);
+}
+
+/* Tech Tag Overrides for Light Mode */
+.data-analysis-project-page .tech-tag {
+    background-color: #e7f3ff; /* Light blue background */
+    color: var(--da-accent-hover); /* Dark blue text */
+    border: 1px solid #b8d8f8;
+    font-weight: 500;
+}
+
+/* Button Overrides */
+.data-analysis-project-page .cta-button {
+    background-color: var(--da-accent-color);
+    color: white;
+    box-shadow: 0 2px 5px var(--da-shadow-color);
+}
+
+.data-analysis-project-page .cta-button:hover {
+    background-color: var(--da-accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Hero Section adjustments for light theme */
+.data-analysis-project-page .project-page-hero .hero {
+    background-color: transparent;
+    min-height: 60vh; /* Reduce hero height */
+    align-items: center; /* Vertically center content */
+}
+
+/* Constrain the hero image size on desktop */
+.data-analysis-project-page .project-page-hero .hero-image {
+    flex-basis: 50%; /* Take up half the space */
+    max-width: 600px; /* Max width to prevent it from getting too big */
+    height: 400px; /* Fixed height */
+    background-size: cover;
+    border-radius: 8px;
+    border: 1px solid var(--da-border-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for the hero image */
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+.data-analysis-project-page .project-page-hero .hero-text p {
+    color: var(--da-text-color);
+    margin-top: 1.5rem; /* Add space above the paragraph */
+}
+
+/* Constrain the image inside the process step */
+.data-analysis-project-page .process-step-image {
+    max-width: 100%; /* Ensure it's responsive */
+    height: auto;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    border: 1px solid var(--da-border-color);
+}
+
+/* Override footer to match light theme */
+.data-analysis-project-page footer {
+    background-color: #e9ecef; /* A light grey footer */
+    border-top: 1px solid var(--da-border-color);
+    color: var(--da-heading-color);
+}
+
+/* Add more spacing to grid layouts */
+.data-analysis-project-page .process-timeline {
+    display: grid; /* Define as a grid to ensure consistent layout */
+    grid-template-columns: 1fr; /* A timeline should be a single column */
+    gap: 2.5rem; /* Increase gap between timeline items */
+}
+
+.data-analysis-project-page #peer-review .features-grid {
+    grid-template-columns: 1fr;
+}
+
+.data-analysis-project-page #peer-review .feature-item ul + p {
+    margin-top: 1rem;
+}
+
+/* Grid styles for containers that might look "one-sided" on mobile */
+.data-analysis-project-page .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .data-analysis-project-page .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .data-analysis-project-page .project-page-hero .hero-text,
+    .data-analysis-project-page .process-step,
+    .data-analysis-project-page .feature-item {
+        text-align: center;
+    }
+
+    .data-analysis-project-page #peer-review .feature-item ul {
+        display: inline-block; /* Allows the list block to be centered */
+        text-align: left;      /* Aligns the text within the list to the left */
+    }
+}
+
+/* --- END: Data Analysis Project Page Styles --- */
+
+/* --- Reusable Project Page Components --- */
+
+/*
+ * This container holds the images for a project step.
+ * On desktop, it arranges them in a horizontal row.
+*/
+.image-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.image-row figure {
+    flex: 1; /* Each figure takes equal space on larger screens */
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-row img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Use 'contain' to see the whole image */
+    border-radius: 4px;
+    border: 1px solid #e0e0e0; /* A neutral border color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem; /* Space between image and caption */
+}
+
+.image-row figcaption {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    text-align: center;
 }
