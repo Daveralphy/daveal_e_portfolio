@@ -76,22 +76,21 @@
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
-            /* Frosted Glass / Glassmorphism Effect */
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 2rem 4rem;
             margin-left: auto;
-            margin-right: auto; /* Center the box */
+            margin-right: auto;
         }
 
         .intro-box p {
             margin-bottom: 0;
             color: #FFFFFF;
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-            max-width: 65ch; /* Keep content width fixed for readability */
+            max-width: 65ch;
         }
 
         .intro-question-line {
@@ -109,7 +108,6 @@
             margin-bottom: 2.5rem;
         }
 
-        /* Hide the duplicated links inside the intro-box on desktop */
         .intro-box .splash-links {
             display: none;
         }
@@ -119,13 +117,13 @@
             align-items: center;
             justify-content: center;
             padding: 0.6rem 1.2rem;
-            width: 170px; /* Set a fixed width for all buttons */
+            width: 170px;
             border-radius: 8px;
             text-decoration: none;
             font-family: var(--heading-font);
             font-weight: bold;
             font-size: 1.1rem;
-            color: #FFFFFF; /* Set text and icon color to white */
+            color: #FFFFFF;
             border: 1px solid transparent;
             transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
         }
@@ -133,13 +131,13 @@
         .splash-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            opacity: 0.9; /* Add a subtle hover effect */
+            opacity: 0.9;
         }
 
         .cta-button {
             display: inline-flex;
             align-items: center;
-            background-color: #333333; /* Match GitHub button color */
+            background-color: #333333;
             color: #ffffff;
             padding: 0.8rem 1.8rem;
             border-radius: 6px;
@@ -147,17 +145,16 @@
             font-family: var(--heading-font);
             font-weight: bold;
             font-size: 1.1rem;
-            border: 0.5px solid rgba(255, 255, 255, 0.2); /* Added a subtle stroke */
+            border: 0.5px solid rgba(255, 255, 255, 0.2);
             transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
         }
 
         .cta-button:hover {
-            background-color: #4a4a4a; /* Lighter grey for hover */
+            background-color: #4a4a4a;
             transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.4); /* Make border slightly more visible on hover */
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
-        /* Set background colors to their respective brand colors */
         .splash-link.behance {
             background-color: #1769ff;
         }
@@ -168,41 +165,46 @@
             background-color: #20BEFF;
         }
         .profile-image-mobile {
-            display: none; /* Hidden by default on desktop */
+            display: none;
         }
 
         @media (max-width: 770px) {
             .intro-box .splash-links {
-                /* This is now hidden on mobile, the links outside the box are shown instead */
                 display: none;
             }
 
             .splash-container {
                 padding: 2rem 1rem;
+                overflow-y: auto;
             }
             .splash-content h1 {
-                letter-spacing: 4px;
-                line-height: 0.8;
+                font-size: clamp(2.2rem, 6vw, 2.8rem);
+                letter-spacing: 1px;
+                line-height: 1.2;
+                margin-bottom: 0.5rem;
             }
             .splash-content h3 {
-                font-size: clamp(1.1rem, 3.8vw, 1.3rem);
-                line-height: 1.5;
-                letter-spacing: 1.3px;
+                font-size: clamp(1rem, 4vw, 1.2rem);
+                line-height: 1.4;
+                letter-spacing: 0.5px;
+                margin: 0 0 1.5rem;
             }
             .intro-box {
-                padding: 1.2rem 1rem;
+                padding: 1.5rem;
                 gap: 1rem;
                 flex-direction: column;
+                width: 100%;
+                max-width: 450px;
             }
             .intro-box p {
-                font-size: 1.1rem;
-                line-height: 1.9;
-                letter-spacing: 1.5px;
+                font-size: 1rem;
+                line-height: 1.6;
+                letter-spacing: 0.2px;
             }
             .profile-image-mobile {
                 display: block;
-                width: 250px;
-                height: 250px;
+                width: 180px;
+                height: 180px;
                 border-radius: 50%;
                 object-fit: cover;
                 margin: 0 auto 2rem;
@@ -210,17 +212,17 @@
             }
             .splash-links {
                 justify-content: center;
-                gap: 0.5rem;
+                gap: 1rem;
+                margin-bottom: 2rem;
             }
             .splash-link {
-                width: 110px; /* Set a fixed width for consistent mobile buttons */
-                padding: 0.6rem 0.8rem;
-                font-size: 0.9rem;
-                justify-content: center;
+                width: 120px;
+                padding: 0.7rem 1rem;
+                font-size: 1rem;
                 border-radius: 8px;
             }
             .cta-button {
-                padding: 0.7rem 1.5rem;
+                padding: 0.8rem 1.6rem;
                 font-size: 1rem;
             }
         }
