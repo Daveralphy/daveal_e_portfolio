@@ -118,29 +118,28 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
             padding: 0.6rem 1.2rem;
-            min-width: 170px;
+            width: 170px; /* Set a fixed width for all buttons */
             border-radius: 8px;
             text-decoration: none;
             font-family: var(--heading-font);
             font-weight: bold;
             font-size: 1.1rem;
-            color: var(--text-color);
-            background-color: #FFFFFF;
+            color: #FFFFFF; /* Set text and icon color to white */
             border: 1px solid transparent;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
         }
 
         .splash-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            opacity: 0.9; /* Add a subtle hover effect */
         }
 
         .cta-button {
             display: inline-flex;
             align-items: center;
-            background-color: var(--accent-color);
+            background-color: #333333; /* Match GitHub button color */
             color: #ffffff;
             padding: 0.8rem 1.8rem;
             border-radius: 6px;
@@ -148,44 +147,34 @@
             font-family: var(--heading-font);
             font-weight: bold;
             font-size: 1.1rem;
-            border: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 0.5px solid rgba(255, 255, 255, 0.2); /* Added a subtle stroke */
+            transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
         }
 
         .cta-button:hover {
-            background-color: var(--accent-hover);
+            background-color: #4a4a4a; /* Lighter grey for hover */
             transform: translateY(-2px);
-        }
-        .splash-link i {
-            font-size: 1.4rem;
-            color: var(--accent-color);
+            border-color: rgba(255, 255, 255, 0.4); /* Make border slightly more visible on hover */
         }
 
-        /* Set icon colors to their respective brand colors */
-        .splash-link.behance i {
-            color: #1769ff;
+        /* Set background colors to their respective brand colors */
+        .splash-link.behance {
+            background-color: #1769ff;
         }
-        .splash-link.github i {
-            color: #333333; /* GitHub logo dark for white backgrounds */
+        .splash-link.github {
+            background-color: #333333;
         }
-        .splash-link.kaggle i {
-            color: #20BEFF;
+        .splash-link.kaggle {
+            background-color: #20BEFF;
         }
-
         .profile-image-mobile {
             display: none; /* Hidden by default on desktop */
         }
 
         @media (max-width: 770px) {
-            .splash-content > .splash-links {
-                display: none;
-            }
-
             .intro-box .splash-links {
-                display: flex;
-                width: 100%;
-                margin-bottom: 0rem;
-                order: -1;
+                /* This is now hidden on mobile, the links outside the box are shown instead */
+                display: none;
             }
 
             .splash-container {
@@ -224,10 +213,9 @@
                 gap: 0.5rem;
             }
             .splash-link {
-                min-width: auto;
+                width: 110px; /* Set a fixed width for consistent mobile buttons */
                 padding: 0.6rem 0.8rem;
                 font-size: 0.9rem;
-                gap: 0.4rem;
                 justify-content: center;
                 border-radius: 8px;
             }
@@ -248,13 +236,13 @@
             <h3>Product Designer | Full-Stack Developer | ML Engineer</h3>
             <div class="splash-links">
                 <a href="https://www.behance.net/davealraphael" target="_blank" rel="noopener noreferrer" class="splash-link behance">
-                    <i class="fab fa-behance"></i> Behance
+                    Bēhance
                 </a>
                 <a href="https://github.com/Daveralphy" target="_blank" rel="noopener noreferrer" class="splash-link github">
-                    <i class="fab fa-github"></i> GitHub
+                    GitHub
                 </a>
                 <a href="https://www.kaggle.com/daveralphy" target="_blank" rel="noopener noreferrer" class="splash-link kaggle">
-                    <i class="fab fa-kaggle"></i> Kaggle
+                    Kaggle
                 </a>
             </div>
             <div class="intro-box">
@@ -264,13 +252,13 @@
                 </p>
                 <div class="splash-links">
                     <a href="https://www.behance.net/davealraphael" target="_blank" rel="noopener noreferrer" class="splash-link behance">
-                        <i class="fab fa-behance"></i> Behance
+                        Bēhance
                     </a>
                     <a href="https://github.com/Daveralphy" target="_blank" rel="noopener noreferrer" class="splash-link github">
-                        <i class="fab fa-github"></i> GitHub
+                        GitHub
                     </a>
                     <a href="https://www.kaggle.com/daveralphy" target="_blank" rel="noopener noreferrer" class="splash-link kaggle">
-                        <i class="fab fa-kaggle"></i> Kaggle
+                        Kaggle
                     </a>
                 </div>
                 <a href="mailto:raphaeldaveal@gmail.com" class="cta-button">Contact Me</a>
